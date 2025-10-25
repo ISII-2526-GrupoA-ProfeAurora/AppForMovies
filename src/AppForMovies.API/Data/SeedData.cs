@@ -67,8 +67,8 @@
                 }
             }
 
-            if (userManager.FindByNameAsync("gregorio@uclm.es").Result == null) {
-                ApplicationUser user = new ApplicationUser("2", "Gregorio", "Diaz Descalzo", "gregorio@uclm.es");
+            if (userManager.FindByNameAsync("aurora@uclm.es").Result == null) {
+                ApplicationUser user = new ApplicationUser("2", "Aurora", "Macías Ojeda", "aurora@uclm.es");
                 user.EmailConfirmed = true;
 
                 var result = userManager.CreateAsync(user, "APassword1234%");
