@@ -7,6 +7,10 @@ on:
   push:
     branches:
       - ejemplos-aurora
+    #  - ejemplos-aurora
+    #paths:
+    #  - 'src/AppForMovies.API**'
+      
   workflow_dispatch:
 
 jobs:
@@ -14,6 +18,9 @@ jobs:
     runs-on: windows-latest
     permissions:
       contents: read #This is required for actions/checkout
+    env:
+      API: ./src/AppForSEII2526.API/AppForSEII2526.API.csproj
+      UT: ./test/AppForSEII2526.UT/AppForSEii2526.UT.csproj
 
     steps:
       - uses: actions/checkout@v4
@@ -62,4 +69,5 @@ jobs:
           app-name: 'appformovies-aurora2025'
           slot-name: 'Production'
           package: .
+
           
