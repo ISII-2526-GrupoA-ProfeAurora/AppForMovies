@@ -14,7 +14,7 @@ builder.Services.AddControllers()
 // Add service for managing a sqlserver database that will be managed using ApplicationDBContext
 // the connection to the database was defined in appsettings
 
-string? connection2Database = Environment.GetEnvironmentVariable("DBConnection2Use");  //AMO: ya configurado en Azure App Service
+string? connection2Database = Environment.GetEnvironmentVariable("DBConnection2Use");  //AMO: ya configurado en Azure App Service (esta linea ya existia)
 
 // If we are using the Production Environment, then the AZURE DB should be used,
 // otherwise the localdb or SQLite should be used
