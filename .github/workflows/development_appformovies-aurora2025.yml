@@ -6,7 +6,11 @@ name: Build and deploy ASP.Net Core app to Azure Web App - appformovies-aurora20
 on:
   push:
     branches:
+      #- aurora-ejemplos
       - development
+    paths:
+      - 'src/AppForMovies.API**'
+  
   workflow_dispatch:
 
 jobs:
@@ -14,6 +18,9 @@ jobs:
     runs-on: windows-latest
     permissions:
       contents: read #This is required for actions/checkout
+    env:
+      API: ./src/AppForMovies.API/AppForMovies.API.csproj
+      UT: ./test/AppForMovies.UT/AppForMovies.UT.csproj
 
     steps:
       - uses: actions/checkout@v4
@@ -62,4 +69,5 @@ jobs:
           app-name: 'appformovies-aurora2025'
           slot-name: 'Production'
           package: .
+
           
